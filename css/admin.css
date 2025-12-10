@@ -1,0 +1,218 @@
+
+:root {
+    --bg: #0f172a;
+    --panel: #1e293b;
+    --card: #243449;
+    --text: #e2e8f0;
+    --muted: #94a3b8;
+    --accent: #38bdf8;
+    --accent-glow: rgba(56,189,248,0.35);
+    --radius: 14px;
+    --radius-lg: 18px;
+    --shadow: 0 12px 35px rgba(0,0,0,0.55);
+    --shadow-soft: 0 6px 20px rgba(0,0,0,0.35);
+}
+
+/* ---------- RESET ---------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Inter", system-ui, sans-serif;
+}
+
+body {
+    background: linear-gradient(180deg, #162033, #0f172a 70%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 40px 20px;
+    color: var(--text);
+}
+
+/* ---------- MAIN CONTAINER ---------- */
+.container {
+    width: 100%;
+    max-width: 650px;
+
+    background: var(--panel);
+    padding: 36px 32px;
+    border-radius: var(--radius-lg);
+
+    box-shadow: var(--shadow);
+    backdrop-filter: blur(12px);
+
+    animation: fadeUp 0.7s ease-out;
+}
+
+/* ---------- HEADINGS ---------- */
+.container h2 {
+    font-size: 2rem;
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: 6px;
+}
+
+.container p {
+    text-align: center;
+    color: var(--muted);
+    margin-bottom: 28px;
+    font-size: 1.05rem;
+}
+
+/* ---------- FORM PANEL ---------- */
+#bookForm {
+    background: var(--card);
+    padding: 22px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-soft);
+
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+
+    margin-bottom: 32px;
+}
+
+/* ---------- Form Inputs ---------- */
+#bookForm input {
+    padding: 14px 16px;
+    border-radius: var(--radius);
+    border: 1px solid rgba(255,255,255,0.08);
+    background: rgba(255,255,255,0.03);
+    color: var(--text);
+    font-size: 1rem;
+
+    transition: all 0.25s ease;
+}
+
+#bookForm input::placeholder {
+    color: var(--muted);
+}
+
+#bookForm input:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 14px var(--accent-glow);
+    transform: translateY(-2px);
+    outline: none;
+}
+
+/* ---------- Add Book Button ---------- */
+#bookForm button {
+    padding: 14px;
+    border-radius: var(--radius);
+    border: none;
+    font-size: 1rem;
+    font-weight: 700;
+
+    background: linear-gradient(135deg, var(--accent), #3b82f6);
+    color: #0f172a;
+
+    cursor: pointer;
+    transition: all 0.25s ease;
+
+    box-shadow: 0 8px 22px rgba(56,189,248,0.25);
+}
+
+#bookForm button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 30px rgba(56,189,248,0.35);
+}
+
+#bookForm button:active {
+    transform: scale(0.97);
+}
+
+/* ---------- BOOK LIST PANEL ---------- */
+#bookList {
+    background: var(--card);
+    padding: 22px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-soft);
+    margin-bottom: 32px;
+}
+
+#bookList h3 {
+    font-size: 1.3rem;
+    margin-bottom: 14px;
+}
+
+/* ---------- Book List Items ---------- */
+#bookList ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#bookList ul li {
+    background: rgba(255,255,255,0.04);
+    padding: 14px 16px;
+    border-radius: var(--radius);
+    border: 1px solid rgba(255,255,255,0.05);
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: var(--text);
+
+    cursor: pointer;
+
+    transition: all 0.25s ease;
+}
+
+/* Hover effect on list items */
+#bookList ul li:hover {
+    background: rgba(255,255,255,0.07);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(56,189,248,0.20);
+    border-color: var(--accent);
+}
+
+/* ---------- NAVIGATION BUTTONS ---------- */
+nav {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+nav a {
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 700;
+    padding: 14px;
+    border-radius: var(--radius);
+
+    background: linear-gradient(135deg, var(--accent), #3b82f6);
+    color: #0f172a;
+
+    text-align: center;
+
+    transition: all 0.25s ease;
+    box-shadow: 0 8px 22px rgba(56,189,248,0.25);
+}
+
+nav a:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 30px rgba(56,189,248,0.35);
+}
+
+nav a:active {
+    transform: scale(0.97);
+}
+
+/* ---------- ANIMATION ---------- */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(22px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

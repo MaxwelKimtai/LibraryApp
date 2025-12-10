@@ -1,0 +1,107 @@
+/* ----------------------------------------------------
+   PREMIUM LIBRARY LANDING PAGE UI
+   Matching style with login page (world-class design)
+---------------------------------------------------- */
+
+:root {
+    --bg: #0f172a;
+    --panel: #1e293b;
+    --text: #e2e8f0;
+    --muted: #94a3b8;
+    --accent: #38bdf8;
+    --accent-glow: rgba(56,189,248,0.35);
+    --radius: 14px;
+    --shadow-md: 0 10px 30px rgba(0,0,0,0.55);
+}
+
+/* ---------- Base Reset ---------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Inter", system-ui, sans-serif;
+}
+
+body {
+    background: radial-gradient(circle at top, #172136, #0f172a 70%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    color: var(--text);
+}
+
+/* ---------- Page Container ---------- */
+.container {
+    width: 100%;
+    max-width: 450px;
+    text-align: center;
+
+    background: var(--panel);
+    padding: 34px 30px;
+    border-radius: var(--radius);
+
+    box-shadow: var(--shadow-md);
+    backdrop-filter: blur(10px);
+
+    animation: fadeUp 0.7s ease-out;
+}
+
+/* ---------- Heading ---------- */
+.container h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    letter-spacing: -0.5px;
+}
+
+/* ---------- Text ---------- */
+.container p {
+    font-size: 1.05rem;
+    color: var(--muted);
+    margin-bottom: 26px;
+}
+
+/* ---------- Navigation Buttons ---------- */
+nav {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+nav a {
+    display: block;
+    padding: 14px;
+    border-radius: var(--radius);
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1rem;
+
+    color: #0f172a;
+    background: linear-gradient(135deg, var(--accent), #3b82f6);
+
+    transition: all 0.25s ease;
+    box-shadow: 0 8px 22px rgba(56,189,248,0.25);
+}
+
+nav a:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 30px rgba(56,189,248,0.35);
+}
+
+nav a:active {
+    transform: scale(0.97);
+}
+
+/* ---------- Animation ---------- */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(18px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
